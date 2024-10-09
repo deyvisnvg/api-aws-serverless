@@ -2,6 +2,14 @@ const { docClient, PutCommand } = require('../../database');
 const { v4 } = require('uuid');
 
 exports.addPersonaje = async (event) => {
+
+    if (!event.body) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ error: 'El cuerpo del evento es requerido' }),
+        };
+    }
+
     const { nombre, poder, maxPoderKi, raza, genero } = JSON.parse(event.body);
     const id = v4();
 
@@ -20,6 +28,7 @@ exports.addPersonaje = async (event) => {
     }
 
     try {
+
         await docClient.send(new PutCommand(params));
         return {
             statusCode: 201,
