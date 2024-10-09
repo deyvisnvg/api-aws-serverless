@@ -1,5 +1,5 @@
 const { speciesService } = require('../../services');
-const { SWAPI_MAP_SPANISH_SPECIES } = require('../../core/swapiMap_es');
+const { SWAPI_MAP_SPANISH_SPECIE } = require('../../core/swapiMap_es');
 
 exports.getSwapiSpecies = async (event) => {
     try {
@@ -9,7 +9,7 @@ exports.getSwapiSpecies = async (event) => {
             const specieMap = {}
 
             Object.keys(specie).forEach(key => {
-                specieMap[SWAPI_MAP_SPANISH_SPECIES[key]] = specie[key];
+                specieMap[SWAPI_MAP_SPANISH_SPECIE[key]] = specie[key];
             })
 
             return specieMap;

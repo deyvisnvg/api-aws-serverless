@@ -15,7 +15,7 @@ const SWAPI_MAP_SPANISH_PLANET = {
     url: "url"
 };
 
-const SWAPI_MAP_SPANISH_SPECIES = {
+const SWAPI_MAP_SPANISH_SPECIE = {
     name: "nombre",
     classification: "clasificacion",
     designation: "designacion",
@@ -35,5 +35,5 @@ const SWAPI_MAP_SPANISH_SPECIES = {
 
 module.exports = {
     SWAPI_MAP_SPANISH_PLANET,
-    SWAPI_MAP_SPANISH_SPECIES,
+    SWAPI_MAP_SPANISH_SPECIE,
 }
