@@ -1,0 +1,14 @@
+{
+  "name": "api-aws",
+  "version": "1.0.0",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.667.0",
+    "@aws-sdk/lib-dynamodb": "^3.667.0",
+    "axios": "^1.7.7",
+    "uuid": "^10.0.0",
+    "yaml": "^2.5.1"
+  },
+  "devDependencies": {
+    "serverless-openapi-documentation": "^0.4.0"
+  }
+}

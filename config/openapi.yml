@@ -1,0 +1,192 @@
+openapi: 3.0.0
+info:
+  title: Serverless API
+  description: Documentación de la API Serverless
+  version: 1.0.0
+
+paths:
+  /swapiPlanet/{id}:
+    get:
+      summary: 'Obtener un planeta de SWAPI'
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Planeta encontrado'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Planets"
+        '500':
+          description: 'Error en el servidor'
+  /swapiPlanets:
+    get:
+      summary: 'Obtener todos los planetas de SWAPI'
+      responses:
+        '200':
+          description: 'Éxito'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Planets"
+        '500':
+          description: 'Error en el servidor'
+  /swapiSpecie/{id}:
+    get:
+      summary: 'Obtener una especie de SWAPI'
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Éxito'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Species"
+        '500':
+          description: 'Error en el servidor'
+  /swapiSpecies:
+    get:
+      summary: 'Obtener todas las especies de SWAPI'
+      responses:
+        '200':
+          description: 'Éxito'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Species"
+        '500':
+          description: 'Error en el servidor'
+  /personaje:
+    post:
+      summary: 'Agregar un personaje'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Personaje"
+      responses:
+        '201':
+          description: 'Personaje creado exitosamente'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Personaje'
+        '500':
+          description: 'Error en el servidor'
+    get:
+      summary: 'Obtener personajes'
+      responses:
+        '200':
+          description: 'Éxito'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Personaje"
+        '500':
+          description: 'Error en el servidor'
+
+components:
+  schemas:
+    Personaje:
+      type: object
+      properties:
+        id:
+          type: string
+        nombre:
+          type: string
+        poder:
+          type: string
+        maxPoderKi:
+          type: string
+        raza:
+          type: string
+        genero:
+          type: string
+    Species:
+      type: object
+      properties:
+        nombre:
+          type: string
+        clasificacion:
+          type: string
+        designacion:
+          type: string
+        altura_promedio:
+          type: string
+        colores_de_piel:
+          type: string
+        colores_de_cabello:
+          type: string
+        colores_de_ojos:
+          type: string
+        promedio_de_vida:
+          type: string
+        mundo_origen:
+          type: string
+        idioma:
+          type: string
+        personas:
+          type: array
+          items:
+            type: string
+        peliculas:
+          type: array
+          items:
+            type: string
+        creado:
+          type: string
+        editado:
+          type: string
+        url:
+          type: string
+    Planets:
+      type: object
+      properties:
+        nombre:
+          type: string
+        periodo_de_rotacion:
+          type: string
+        periodo_orbital:
+          type: string
+        diametro:
+          type: string
+        clima:
+          type: string
+        gravedad:
+          type: string
+        terreno:
+          type: string
+        superficie_agua:
+          type: string
+        poblacion:
+          type: string
+        residentes:
+          type: array
+          items:
+            type: string
+        peliculas:
+          type: array
+          items:
+            type: string
+        creado:
+          type: string
+        editado:
+          type: string
+        url:
+          type: string
