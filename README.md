@@ -369,6 +369,30 @@
         ...
       ]
   ```
+# Pruebas Unitarias (Test Unit - Jest)
+  ```bash
+    npm test 
+  ```
+
+- _Resultado en la Terminal del test_
+  ```bash
+      > api-aws@1.0.0 test
+      > jest
+
+      PASS  test/unit/getSwapiSpecie.test.js
+      PASS  test/unit/getSwapiSpecies.test.js
+      PASS  test/unit/getSwapiPlanets.test.js
+      PASS  test/unit/addPersonaje.test.js
+      PASS  test/unit/getSwapiPlanet.test.js
+      PASS  test/unit/getPersonaje.test.js
+
+      Test Suites: 6 passed, 6 total
+      Tests:       15 passed, 15 total
+      Snapshots:   0 total
+      Time:        2.528 s
+      Ran all test suites.
+
+  ```
 
 # Documentación en Open API / Swagger
 
